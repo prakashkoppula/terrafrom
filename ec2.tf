@@ -2,7 +2,6 @@ provider "aws" {
   access_key = "AKIA4GJ7ISRD25DIDV6N"
   secret_key = "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"
   region     = "ap-south-1"
-  version    = "v2.70.0"
 }
 
 data "aws_ssm_parameter" "ami" {
