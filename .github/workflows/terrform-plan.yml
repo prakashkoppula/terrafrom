@@ -3,7 +3,7 @@ name: "Terraform"
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
@@ -28,8 +28,8 @@ jobs:
         id: validate
         run: terraform validate -no-color
 
-      - name: Terraform Plan
-        id: plan
+      - name: Terraform apply
+        id: apply
         if: github.event_name == 'pull_request'
-        run: terraform plan -no-color
+        run: terraform apply -auto-approve -input=false
         continue-on-error: true
